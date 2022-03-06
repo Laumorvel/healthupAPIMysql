@@ -5,20 +5,9 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.ManyToOne;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-import lombok.ToString;
 
 @Entity
-@Getter
-@Setter
-@ToString
-@NoArgsConstructor
 public class Premio {
 	
 	@Id
@@ -28,13 +17,36 @@ public class Premio {
 	@Column(nullable = false)
 	private String nombre;
 	
-	@JsonIgnore
-	@ManyToOne
-	private User user;
 	
-	public Premio(String nombre, User user) {
+	public Premio(String nombre) {
 		this.nombre = nombre;
-		this.user = user;
 	}
 
+
+	public Long getId() {
+		return id;
+	}
+
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+
+	public String getNombre() {
+		return nombre;
+	}
+
+
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
+
+
+	@Override
+	public String toString() {
+		return "Premio [id=" + id + ", nombre=" + nombre + "]";
+	}
+
+	public Premio() {}
 }

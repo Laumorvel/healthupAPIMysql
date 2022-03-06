@@ -12,16 +12,8 @@ import javax.persistence.ManyToOne;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-import lombok.ToString;
 
 @Entity
-@Getter
-@Setter
-@ToString
-@NoArgsConstructor
 public class Logro {
 	
 	@Id
@@ -41,6 +33,12 @@ public class Logro {
 	
 	@Column(nullable = false)
 	private String tipo;
+	
+	/**
+	 * Solo algunos logros tienen premios
+	 */
+	@ManyToOne
+	private Premio premio = null;
 
 	
 	/**
@@ -70,13 +68,8 @@ public class Logro {
 		this.tipo = tipo;
 	}
 	
-	/**
-	 * NO REGISTRADO
-	 * @param fecha
-	 * @param user
-	 * @param tipo
-	 * @param noRegistrado
-	 */
+	
+	//NO REGISTRADO
 	public Logro(String fecha, User user, String tipo, Boolean noRegistrado) {
 		this.fecha = fecha;
 		this.user = user;
@@ -84,13 +77,7 @@ public class Logro {
 		this.noRegistrado = noRegistrado;
 	}
 
-	/**
-	 * normales
-	 * @param fecha
-	 * @param logradoDia
-	 * @param user
-	 * @param tipo
-	 */
+	//LOGRO BÁSICO
 	public Logro(String fecha, Boolean logradoDia, User user, String tipo) {
 		this.fecha = fecha;
 		this.logradoDia = logradoDia;
@@ -98,7 +85,73 @@ public class Logro {
 		this.tipo = tipo;
 	}
 	
-	
+	//LOGRO CON PREMIO
+	public Logro(String fecha, Boolean logradoDia, User user, String tipo, Premio premio) {
+		this.fecha = fecha;
+		this.logradoDia = logradoDia;
+		this.user = user;
+		this.tipo = tipo;
+		this.premio = premio;
+	}
 	
 
+	public Logro() {}
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public String getFecha() {
+		return fecha;
+	}
+
+	public void setFecha(String fecha) {
+		this.fecha = fecha;
+	}
+
+	public Boolean getLogradoDia() {
+		return logradoDia;
+	}
+
+	public void setLogradoDia(Boolean logradoDia) {
+		this.logradoDia = logradoDia;
+	}
+
+	public Boolean getNoRegistrado() {
+		return noRegistrado;
+	}
+
+	public void setNoRegistrado(Boolean noRegistrado) {
+		this.noRegistrado = noRegistrado;
+	}
+
+	public User getUser() {
+		return user;
+	}
+
+	public void setUser(User user) {
+		this.user = user;
+	}
+
+	public String getTipo() {
+		return tipo;
+	}
+
+	public void setTipo(String tipo) {
+		this.tipo = tipo;
+	}
+
+	public Premio getPremio() {
+		return premio;
+	}
+
+	public void setPremio(Premio premio) {
+		this.premio = premio;
+	}
+	
+	
 }

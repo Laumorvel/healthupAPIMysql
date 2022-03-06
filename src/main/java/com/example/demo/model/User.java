@@ -8,16 +8,8 @@ import javax.persistence.Id;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-import lombok.ToString;
 
 @Entity
-@Getter
-@Setter
-@ToString
-@NoArgsConstructor
 public class User {
 
 	@Id
@@ -147,4 +139,112 @@ public class User {
 		this.logradoSemanaSport = (this.objetivoSportSemanal <= this.avanceSemanaSport);
 	}
 
+	public User() {}
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public String getSurname() {
+		return surname;
+	}
+
+	public void setSurname(String surname) {
+		this.surname = surname;
+	}
+
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
+
+	public String getUsername() {
+		return username;
+	}
+
+	public void setUsername(String username) {
+		this.username = username;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	public Integer getObjetivoFoodSemanal() {
+		return objetivoFoodSemanal;
+	}
+
+	public void setObjetivoFoodSemanal(Integer objetivoFoodSemanal) {
+		this.objetivoFoodSemanal = objetivoFoodSemanal;
+	}
+
+	public Integer getObjetivoSportSemanal() {
+		return objetivoSportSemanal;
+	}
+
+	public void setObjetivoSportSemanal(Integer objetivoSportSemanal) {
+		this.objetivoSportSemanal = objetivoSportSemanal;
+	}
+
+	public Boolean getLogradoSemanaFood() {
+		return logradoSemanaFood;
+	}
+
+	public void setLogradoSemanaFood(Boolean logradoSemanaFood) {
+		this.logradoSemanaFood = logradoSemanaFood;
+	}
+
+	public Boolean getLogradoSemanaSport() {
+		return logradoSemanaSport;
+	}
+
+	public void setLogradoSemanaSport(Boolean logradoSemanaSport) {
+		this.logradoSemanaSport = logradoSemanaSport;
+	}
+
+	public Integer getAvanceSemanaFood() {
+		return avanceSemanaFood;
+	}
+
+	public void setAvanceSemanaFood(Integer avanceSemanaFood) {
+		this.avanceSemanaFood = avanceSemanaFood;
+	}
+
+	public Integer getAvanceSemanaSport() {
+		return avanceSemanaSport;
+	}
+
+	public void setAvanceSemanaSport(Integer avanceSemanaSport) {
+		this.avanceSemanaSport = avanceSemanaSport;
+	}
+
+	@Override
+	public String toString() {
+		return "User [id=" + id + ", name=" + name + ", surname=" + surname + ", password=" + password + ", username="
+				+ username + ", email=" + email + ", objetivoFoodSemanal=" + objetivoFoodSemanal
+				+ ", objetivoSportSemanal=" + objetivoSportSemanal + ", logradoSemanaFood=" + logradoSemanaFood
+				+ ", logradoSemanaSport=" + logradoSemanaSport + ", avanceSemanaFood=" + avanceSemanaFood
+				+ ", avanceSemanaSport=" + avanceSemanaSport + "]";
+	}
+	
+	
 }

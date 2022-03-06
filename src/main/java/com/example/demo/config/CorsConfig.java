@@ -48,15 +48,7 @@ public class CorsConfig {
 						.allowedHeaders("Content-Type","Authorization", "X-Requested-With", "accept", "Origin",
 								"Access-Control-Request-Method", "Access-Control-Request-Headers")
 						.exposedHeaders("Access-Control-Allow-Origin", "Access-Control-Allow-Credentials");
-				
-//				//user by id
-//				registry.addMapping("/user").allowedOrigins("http://localhost:4200")
-//						.allowedMethods("GET", "POST", "OPTIONS", "PUT")
-//						.allowedHeaders("Content-Type","Authorization", "X-Requested-With", "accept", "Origin",
-//								"Access-Control-Request-Method", "Access-Control-Request-Headers")
-//						.exposedHeaders("Access-Control-Allow-Origin", "Access-Control-Allow-Credentials");
-				
-				
+			
 				//check email and username
 				registry.addMapping("auth/user").allowedOrigins("http://localhost:4200")
 						.allowedMethods("GET", "POST", "OPTIONS", "PUT")
@@ -101,13 +93,27 @@ public class CorsConfig {
 						"Access-Control-Request-Method", "Access-Control-Request-Headers")
 				.exposedHeaders("Access-Control-Allow-Origin", "Access-Control-Allow-Credentials");
 				
-				//Añade premio a otro usuario
-				registry.addMapping("/premio/{idPremio}/user/{idUser}").allowedOrigins("http://localhost:4200")
+				//Crea premio
+				registry.addMapping("/logro/{idLogro}/premio").allowedOrigins("http://localhost:4200")
 				.allowedMethods("GET", "POST", "OPTIONS", "PUT")
 				.allowedHeaders("Content-Type","Authorization", "X-Requested-With", "accept", "Origin",
 						"Access-Control-Request-Method", "Access-Control-Request-Headers")
 				.exposedHeaders("Access-Control-Allow-Origin", "Access-Control-Allow-Credentials");
 				
+				//Borra, edita y consigue premio
+				registry.addMapping("/logro/{idLogro}/premio/{idPremio}").allowedOrigins("http://localhost:4200")
+				.allowedMethods("GET", "POST", "OPTIONS", "PUT")
+				.allowedHeaders("Content-Type","Authorization", "X-Requested-With", "accept", "Origin",
+						"Access-Control-Request-Method", "Access-Control-Request-Headers")
+				.exposedHeaders("Access-Control-Allow-Origin", "Access-Control-Allow-Credentials");
+				
+				
+				//Consigue contraseña
+				registry.addMapping("/getPassword").allowedOrigins("http://localhost:4200")
+				.allowedMethods("GET", "POST", "OPTIONS", "PUT")
+				.allowedHeaders("Content-Type","Authorization", "X-Requested-With", "accept", "Origin",
+						"Access-Control-Request-Method", "Access-Control-Request-Headers")
+				.exposedHeaders("Access-Control-Allow-Origin", "Access-Control-Allow-Credentials");
 				
 			}
 
