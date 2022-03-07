@@ -21,18 +21,18 @@ import com.example.demo.repository.UserRepo;
 
 @SpringBootApplication
 @EnableScheduling
-public class HealthUpApiApplication extends SpringBootServletInitializer{
+public class HealthUpMysql2 extends SpringBootServletInitializer{
 	
 	@Override
 	protected SpringApplicationBuilder configure(SpringApplicationBuilder builder) {
-		return builder.sources(HealthUpApiApplication.class);
+		return builder.sources(HealthUpMysql2.class);
 	}
 	
 	@Autowired
 	private PasswordEncoder passwordEncoder;
 
 	public static void main(String[] args) {
-		SpringApplication.run(HealthUpApiApplication.class, args);
+		SpringApplication.run(HealthUpMysql2.class, args);
 	}
 	
 	/**
