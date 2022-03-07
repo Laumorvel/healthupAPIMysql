@@ -15,7 +15,7 @@ public class CorsConfig {
 			public void addCorsMappings(CorsRegistry registry) {
 				
 				//login
-				registry.addMapping("/auth/login").allowedOrigins("https://healthupmysql.herokuapp.com")
+				registry.addMapping("/auth/login").allowedOrigins("https://laumorvel.github.io/healthupDespliegueFrontend")
 						.allowedMethods("GET", "POST", "OPTIONS", "PUT")
 						.allowedHeaders("Content-Type", "Authorization", "X-Requested-With", "accept", "Origin",
 								"Access-Control-Request-Method", "Access-Control-Request-Headers")
