@@ -15,42 +15,42 @@ public class CorsConfig {
 			public void addCorsMappings(CorsRegistry registry) {
 				
 				//login
-				registry.addMapping("/auth/login").allowedOrigins("https://healthupheroku.herokuapp.com")
+				registry.addMapping("/auth/login").allowedOrigins("https://healthupmysql.herokuapp.com")
 						.allowedMethods("GET", "POST", "OPTIONS", "PUT")
 						.allowedHeaders("Content-Type", "Authorization", "X-Requested-With", "accept", "Origin",
 								"Access-Control-Request-Method", "Access-Control-Request-Headers")
 						.exposedHeaders("Access-Control-Allow-Origin", "Access-Control-Allow-Credentials");
 				
 				//register
-				registry.addMapping("/auth/register").allowedOrigins("https://healthupheroku.herokuapp.com")
+				registry.addMapping("/auth/register").allowedOrigins("https://healthupmysql.herokuapp.com")
 						.allowedMethods("GET", "POST", "OPTIONS", "PUT")
 						.allowedHeaders("Content-Type", "Authorization", "X-Requested-With", "accept", "Origin",
 								"Access-Control-Request-Method", "Access-Control-Request-Headers")
 						.exposedHeaders("Access-Control-Allow-Origin", "Access-Control-Allow-Credentials");
 				
 				//comprobación logueo con guardián
-				registry.addMapping("/login").allowedOrigins("https://healthupheroku.herokuapp.com")
+				registry.addMapping("/login").allowedOrigins("https://healthupmysql.herokuapp.com")
 						.allowedMethods("GET", "POST", "OPTIONS", "PUT")
 						.allowedHeaders("Content-Type","Authorization", "X-Requested-With", "accept", "Origin",
 								"Access-Control-Request-Method", "Access-Control-Request-Headers")
 						.exposedHeaders("Access-Control-Allow-Origin", "Access-Control-Allow-Credentials");
 				
 				//conseguir token
-				registry.addMapping("/auth/token").allowedOrigins("https://healthupheroku.herokuapp.com")
+				registry.addMapping("/auth/token").allowedOrigins("https://healthupmysql.herokuapp.com")
 						.allowedMethods("GET", "POST", "OPTIONS", "PUT")
 						.allowedHeaders("Content-Type", "Authorization", "X-Requested-With", "accept", "Origin",
 								"Access-Control-Request-Method", "Access-Control-Request-Headers")
 						.exposedHeaders("Access-Control-Allow-Origin", "Access-Control-Allow-Credentials");
 				
 				//user
-				registry.addMapping("/user").allowedOrigins("https://healthupheroku.herokuapp.com")
+				registry.addMapping("/user").allowedOrigins("https://healthupmysql.herokuapp.com")
 						.allowedMethods("GET", "POST", "OPTIONS", "PUT")
 						.allowedHeaders("Content-Type","Authorization", "X-Requested-With", "accept", "Origin",
 								"Access-Control-Request-Method", "Access-Control-Request-Headers")
 						.exposedHeaders("Access-Control-Allow-Origin", "Access-Control-Allow-Credentials");
 			
 				//check email and username
-				registry.addMapping("auth/user").allowedOrigins("https://healthupheroku.herokuapp.com")
+				registry.addMapping("auth/user").allowedOrigins("https://healthupmysql.herokuapp.com")
 						.allowedMethods("GET", "POST", "OPTIONS", "PUT")
 						.allowedHeaders("Content-Type","Authorization", "X-Requested-With", "accept", "Origin",
 								"Access-Control-Request-Method", "Access-Control-Request-Headers")
@@ -58,14 +58,14 @@ public class CorsConfig {
 				
 				
 				//registro(historial de logros)
-				registry.addMapping("/registro").allowedOrigins("https://healthupheroku.herokuapp.com")
+				registry.addMapping("/registro").allowedOrigins("https://healthupmysql.herokuapp.com")
 				.allowedMethods("GET", "POST", "OPTIONS", "PUT")
 				.allowedHeaders("Content-Type","Authorization", "X-Requested-With", "accept", "Origin",
 						"Access-Control-Request-Method", "Access-Control-Request-Headers")
 				.exposedHeaders("Access-Control-Allow-Origin", "Access-Control-Allow-Credentials");
 				
 				//Añade logro
-				registry.addMapping("/newLogro").allowedOrigins("https://healthupheroku.herokuapp.com")
+				registry.addMapping("/newLogro").allowedOrigins("https://healthupmysql.herokuapp.com")
 				.allowedMethods("GET", "POST", "OPTIONS", "PUT")
 				.allowedHeaders("Content-Type","Authorization", "X-Requested-With", "accept", "Origin",
 						"Access-Control-Request-Method", "Access-Control-Request-Headers")
@@ -73,35 +73,35 @@ public class CorsConfig {
 				
 				//Modifica logro 
 				//Put para modificar logros de usuario
-				registry.addMapping("/modificaLogro/{idLogro}").allowedOrigins("https://healthupheroku.herokuapp.com")
+				registry.addMapping("/modificaLogro/{idLogro}").allowedOrigins("https://healthupmysql.herokuapp.com")
 				.allowedMethods("GET", "POST", "OPTIONS", "PUT")
 				.allowedHeaders("Content-Type","Authorization", "X-Requested-With", "accept", "Origin",
 						"Access-Control-Request-Method", "Access-Control-Request-Headers")
 				.exposedHeaders("Access-Control-Allow-Origin", "Access-Control-Allow-Credentials");
 				
 				//mensaje - contact us
-				registry.addMapping("/auth/newMessage").allowedOrigins("https://healthupheroku.herokuapp.com")
+				registry.addMapping("/auth/newMessage").allowedOrigins("https://healthupmysql.herokuapp.com")
 				.allowedMethods("GET", "POST", "OPTIONS", "PUT")
 				.allowedHeaders("Content-Type","Authorization", "X-Requested-With", "accept", "Origin",
 						"Access-Control-Request-Method", "Access-Control-Request-Headers")
 				.exposedHeaders("Access-Control-Allow-Origin", "Access-Control-Allow-Credentials");
 				
 				//Elimina logro
-				registry.addMapping("/eliminaLogro/{id}").allowedOrigins("https://healthupheroku.herokuapp.com")
+				registry.addMapping("/eliminaLogro/{id}").allowedOrigins("https://healthupmysql.herokuapp.com")
 				.allowedMethods("GET", "POST", "OPTIONS", "PUT")
 				.allowedHeaders("Content-Type","Authorization", "X-Requested-With", "accept", "Origin",
 						"Access-Control-Request-Method", "Access-Control-Request-Headers")
 				.exposedHeaders("Access-Control-Allow-Origin", "Access-Control-Allow-Credentials");
 				
 				//Crea premio
-				registry.addMapping("/logro/{idLogro}/premio").allowedOrigins("https://healthupheroku.herokuapp.com")
+				registry.addMapping("/logro/{idLogro}/premio").allowedOrigins("https://healthupmysql.herokuapp.com")
 				.allowedMethods("GET", "POST", "OPTIONS", "PUT")
 				.allowedHeaders("Content-Type","Authorization", "X-Requested-With", "accept", "Origin",
 						"Access-Control-Request-Method", "Access-Control-Request-Headers")
 				.exposedHeaders("Access-Control-Allow-Origin", "Access-Control-Allow-Credentials");
 				
 				//Borra, edita y consigue premio
-				registry.addMapping("/logro/{idLogro}/premio/{idPremio}").allowedOrigins("https://healthupheroku.herokuapp.com")
+				registry.addMapping("/logro/{idLogro}/premio/{idPremio}").allowedOrigins("https://healthupmysql.herokuapp.com")
 				.allowedMethods("GET", "POST", "OPTIONS", "PUT")
 				.allowedHeaders("Content-Type","Authorization", "X-Requested-With", "accept", "Origin",
 						"Access-Control-Request-Method", "Access-Control-Request-Headers")
@@ -109,7 +109,7 @@ public class CorsConfig {
 				
 				
 				//Consigue contraseña
-				registry.addMapping("/getPassword").allowedOrigins("https://healthupheroku.herokuapp.com")
+				registry.addMapping("/getPassword").allowedOrigins("https://healthupmysql.herokuapp.com")
 				.allowedMethods("GET", "POST", "OPTIONS", "PUT")
 				.allowedHeaders("Content-Type","Authorization", "X-Requested-With", "accept", "Origin",
 						"Access-Control-Request-Method", "Access-Control-Request-Headers")
