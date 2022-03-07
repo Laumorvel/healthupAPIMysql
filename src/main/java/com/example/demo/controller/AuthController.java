@@ -37,7 +37,7 @@ import com.example.demo.service.MensajeService;
 import com.example.demo.service.UserService;
 import com.fasterxml.jackson.databind.JsonMappingException;
 
-@CrossOrigin(origins = "https://healthupheroku.herokuapp.com")
+@CrossOrigin(origins = "https://healthupmysql.herokuapp.com")
 @RestController
 public class AuthController {
 
